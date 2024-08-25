@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts Sub-Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .post-items {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 100px;
+        }
+        .post {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+            max-height: 500px;
+        }
+        .post img {
+            width: 100%;
+            height: 300px;
+            display: block;
+            object-fit: cover;
+        }
+        .post-content {
+            padding: 15px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .description {
+            display: none;
+        }
+        .view-more {
+            color: #3498db;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .view-more:hover {
+            text-decoration: underline;
+        }
+        .summary {
+            margin-bottom: 5px;
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li class="menu-item"><a href="index.html" class="menu-link">მთავარი</a></li>
+                <li class="menu-item"><a href="#about" class="menu-link">ჩვენს შესახებ</a></li>
+                <li class="menu-item dropdown">
+                    <a href="#services" class="menu-link active">ისწავლე</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#service1">უფლებების მიმოხილვა</a></li>
+                        <li><a href="#service2">ბავშვთა უფლებები</a></li>
+                        <li><a href="#service3">შრომის უფლებები</a></li>
+                        <li><a href="#service4">მოქალაქეობა</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item"><a href="playing.html" class="menu-link">ითამაშე</a></li>
+                <li class="menu-item"><a href="#contact" class="menu-link">პროფილი</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="post-items">
+        <div class="post">
+            <img src="https://images.unsplash.com/photo-1589391886645-d51941baf7fb?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGxhd3xlbnwwfHwwfHx8Mg%3D%3D" alt="Post Image 1">
+            <div class="post-content">
+                <p class="summary">კონსტიტუციის მე-9 მუხლი ღირსებას იცავს. ღირსება აბსოლუტური უფლებაა, რომლის შეზღუდვაც დაუშვებელია მაშინაც კი... </p>
+                <p class="description">კონსტიტუციის მე-9 მუხლი ღირსებას იცავს. ღირსება აბსოლუტური უფლებაა, რომლის შეზღუდვაც დაუშვებელია მაშინაც კი, თუ არსებობს საფრთხე დემოკრატიული საზოგადოებისათვის ან ადამიანის უფლებებისთვის. ღირსება უფლება იცავს ყველა ადამიანს წამებისგან, არაადამიანური და დამამცირებელი მოპყრობისგან.</p>
+                <span class="view-more">View more...</span>
+            </div>
+        </div>
+    
+        <div class="post">
+            <img src="https://images.unsplash.com/photo-1454923634634-bd1614719a7b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fGxhd3xlbnwwfHwwfHx8Mg%3D%3D alt="Post Image 2">
+            <div class="post-content">
+                <p class="summary">საქართველოს კონსტიტუცია ქვეყნის უზენაესი კანონია, რომელსაც უნდა შეესაბამებოდეს სხვა საკანონმდებლო აქტები. საქართველოს...</p>
+                <p class="description">საქართველოს კონსტიტუცია ქვეყნის უზენაესი კანონია, რომელსაც უნდა შეესაბამებოდეს სხვა საკანონმდებლო აქტები. საქართველოს კონსტიტუცია იცავს ადამიანის ძირითად უფლებებსა და თავისუფლებებს, რომლებსაც კონსტიტუციის მე-2 თავში ვხვდებით. კონსტიტუცია იცავს სამოქალაქო, პოლიტიკურ, სოციალურ უფლებებს.</p>
+                <span class="view-more">View more...</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.view-more').forEach(link => {
+            link.addEventListener('click', () => {
+                const description = link.parentElement.querySelector('.description');
+                const summary = link.parentElement.querySelector('.summary');
+                
+                if (description.style.display === 'block') {
+                    description.style.display = 'none';
+                    summary.style.display = 'inline';
+                    link.textContent = 'View more...';
+                } else {
+                    description.style.display = 'block';
+                    summary.style.display = 'none';
+                    link.textContent = 'View less';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
